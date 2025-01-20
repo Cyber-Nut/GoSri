@@ -46,7 +46,7 @@ class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.05,
+              height: MediaQuery.of(context).size.height * 0.02,
             ),
 
             //Back Button

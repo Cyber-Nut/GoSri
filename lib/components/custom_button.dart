@@ -19,22 +19,21 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
         onTap: onPressed,
         child: Expanded(
-          child: Container(
-            decoration: BoxDecoration(
-                color: backgroundColor,
-                borderRadius: BorderRadius.all(Radius.circular(4)),
-                border: Border.all(
-                  color: borderColor,
-                )),
-            child: Center(
-              child: Text(
-                title,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.021),
-              ),
+            child: Container(
+          decoration: BoxDecoration(
+              color: backgroundColor,
+              borderRadius: BorderRadius.all(Radius.circular(4)),
+              border: Border.all(
+                color: borderColor,
+              )),
+          child: Center(
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.021),
             ),
           ),
-        ));
+        )));
   }
 }
