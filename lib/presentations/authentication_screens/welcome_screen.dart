@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gosri/authentication_screens/choose_role_screen.dart';
-import 'package:gosri/components/colors.dart';
-import 'package:gosri/components/custom_button.dart';
+import 'package:gosri/presentations/authentication_screens/choose_role_screen.dart';
+import 'package:gosri/widgets/colors.dart';
+import 'package:gosri/widgets/custom_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});

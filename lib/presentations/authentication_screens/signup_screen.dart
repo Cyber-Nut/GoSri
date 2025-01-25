@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gosri/components/colors.dart';
-import 'package:gosri/components/custom_button.dart';
-import 'package:gosri/components/input_field.dart';
+import 'package:gosri/widgets/colors.dart';
+import 'package:gosri/widgets/custom_button.dart';
+import 'package:gosri/widgets/input_field.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
+import 'package:roundcheckbox/roundcheckbox.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -20,6 +21,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
   void onSignUpHandler() {
     print('Sign Up button pressed');
+    Navigator.pushNamed(context, '/otp');
   }
 
   @override
@@ -165,7 +167,7 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.03,
+              height: MediaQuery.of(context).size.height * 0.02,
             ),
             //Sign Up button
             Container(
@@ -178,6 +180,151 @@ class _SignupScreenState extends State<SignupScreen> {
                       backgroundColor: AppColors.primary,
                       borderColor: AppColors.primary),
                 )),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RoundCheckBox(
+                  onTap: (selected) => print('Check Box Tapped'),
+                  isChecked: false,
+                  size: MediaQuery.of(context).size.height * 0.025,
+                  checkedColor: AppColors.primary,
+                  checkedWidget: Icon(
+                    Icons.check,
+                    size: MediaQuery.of(context).size.height * 0.02,
+                    color: AppColors.error,
+                  ),
+                  animationDuration: Duration(milliseconds: 0),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.02,
+                ),
+                Text(
+                  'By signing up, you agree to the',
+                  style: TextStyle(
+                      color: AppColors.error,
+                      fontSize: MediaQuery.of(context).size.height * 0.015),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.005,
+                ),
+                Text(
+                  'Terms of Service',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: MediaQuery.of(context).size.height * 0.015),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.005,
+                ),
+                Text(
+                  '&',
+                  style: TextStyle(
+                      color: AppColors.error,
+                      fontSize: MediaQuery.of(context).size.height * 0.015),
+                ),
+              ],
+            ),
+
+            Container(
+              width: MediaQuery.of(context).size.width * 9,
+              child: Padding(
+                padding: EdgeInsets.only(left: 50),
+                child: Text(
+                  'Privacy policy',
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: MediaQuery.of(context).size.height * 0.015),
+                ),
+              ),
+            ),
+
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
+            ),
+            Text(
+              'Or',
+              style: TextStyle(color: AppColors.error),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                //Google Button
+                GestureDetector(
+                  onTap: () => print('Google Button Pressed'),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.06,
+                    width: MediaQuery.of(context).size.width * 0.13,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(3),
+                        border: Border.all(color: AppColors.surface, width: 1)),
+                    child: Center(
+                      child: Image.asset(
+                        'assets/images/googleLogo.png',
+                        height: MediaQuery.of(context).size.height * 0.04,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.05,
+                ),
+
+                //Facebook Button
+                GestureDetector(
+                  onTap: () => print('Facebook Button Pressed'),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.06,
+                    width: MediaQuery.of(context).size.width * 0.13,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(3),
+                        border: Border.all(color: AppColors.surface, width: 1)),
+                    child: Center(
+                      child: Image.asset(
+                        'assets/images/facebookIcon.png',
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Already have an account?',
+                  style: TextStyle(
+                    color: AppColors.error,
+                  ),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.02,
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.pushNamed(context, '/signIn'),
+                  child: Text(
+                    'Sign In',
+                    style: TextStyle(
+                        color: AppColors.primary,
+                        fontSize: MediaQuery.of(context).size.height * 0.02),
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),

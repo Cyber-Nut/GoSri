@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gosri/components/colors.dart';
+import 'package:gosri/widgets/colors.dart';
 
 class InputField extends StatelessWidget {
   final String hintText;
