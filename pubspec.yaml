@@ -69,7 +69,7 @@ flutter:
   assets:
       - assets/images/googleLogo.png
       - assets/images/metaLogo.png
-      - assets/images/welcome.png
+      - assets/images/welcome.svg
       - assets/images/facebookIcon.png
       - assets/images/intro1.svg
       - assets/images/intro2.svg

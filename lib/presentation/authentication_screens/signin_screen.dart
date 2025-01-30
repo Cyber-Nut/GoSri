@@ -1,4 +1,3 @@
-import 'package:fancy_password_field/fancy_password_field.dart';
 import 'package:flutter/material.dart';
 import 'package:gosri/widgets/colors.dart';
 import 'package:gosri/widgets/custom_button.dart';

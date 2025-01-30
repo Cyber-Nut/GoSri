@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gosri/routes/app_routes.dart';
 import 'package:gosri/widgets/colors.dart';
 import 'package:gosri/widgets/custom_button.dart';
@@ -38,8 +39,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   decoration: BoxDecoration(
                       // color: Colors.red,
                       ),
-                  child: Image.asset(
-                    'assets/images/welcome.png',
+                  child: SvgPicture.asset(
+                    'assets/images/welcome.svg',
                     fit: BoxFit.contain,
                   )),
             ),

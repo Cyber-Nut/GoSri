@@ -129,8 +129,7 @@ class __SetPasswordScreenState extends State<SetPasswordScreen> {
                       height: MediaQuery.of(context).size.height * 0.055,
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
-                        border:
-                            Border.all(color: AppColors.surface, width: 0.7),
+                        border: Border.all(color: AppColors.surface, width: 1),
                         borderRadius: BorderRadius.circular(3),
                       ),
                       child: TextFormField(

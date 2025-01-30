@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gosri/presentation/authentication_screens/choose_role_screen.dart';
 import 'package:gosri/presentation/authentication_screens/set_newpassword_screen.dart';
+import 'package:gosri/presentation/intro_screens/at_any_moment_screen.dart';
+import 'package:gosri/presentation/intro_screens/book_your_ride_screen.dart';
+import 'package:gosri/presentation/intro_screens/by_your_side_screen.dart';
 
 import '../presentation/authentication_screens/otp_screen.dart';
 import '../presentation/authentication_screens/set_password_screen.dart';
@@ -23,7 +26,14 @@ class AppRoutes {
       '/lib/presentation/authentication_screens/set_password_screen.dart';
   static const String setNewPasswordScreen =
       'lib/presentation/authentication_screens/set_newpassword_screen.dart';
-  static const String initialRoute = '/welcome';
+  static const String byYourSideScreen =
+      'lib/presentation/intro_screens/by_your_side_screen.dart';
+  static const String atAnyMomentScreen =
+      'lib/presentation/intro_screens/at_any_moment_screen.dart';
+  static const String bookYourRideScreen =
+      'lib/presentation/intro_screens/book_your_ride_screen.dart';
+  static const String initialRoute =
+      'lib/presentation/intro_screens/by_your_side_screen.dart';
 
   static Map<String, WidgetBuilder> routes = {
     roleScreen: (context) => ChooseRoleScreen(),
@@ -33,6 +43,9 @@ class AppRoutes {
     otpScreen: (context) => OtpScreen(),
     setPasswordScreen: (context) => SetPasswordScreen(),
     setNewPasswordScreen: (context) => SetNewPasswordScreen(),
-    initialRoute: (context) => WelcomeScreen(),
+    byYourSideScreen: (context) => ByYourSideScreen(),
+    atAnyMomentScreen: (context) => AtAnyMomentScreen(),
+    bookYourRideScreen: (context) => BookYourRideScreen(),
+    initialRoute: (context) => ByYourSideScreen(),
   };
 }
