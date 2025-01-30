@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gosri/presentations/authentication_screens/signup_screen.dart';
+import 'package:gosri/routes/app_routes.dart';
 import 'package:gosri/widgets/colors.dart';
 
 import '../../widgets/custom_button.dart';
@@ -33,8 +33,7 @@ class _ChooseRoleScreenState extends State<ChooseRoleScreen> {
   }
 
   void onDoneHandler() {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => SignupScreen()));
+    Navigator.pushNamed(context, AppRoutes.signUpScreen);
   }
 
   @override

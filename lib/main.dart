@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gosri/presentations/authentication_screens/choose_role_screen.dart';
-import 'package:gosri/presentations/authentication_screens/signin_screen.dart';
-import 'package:gosri/presentations/authentication_screens/signup_screen.dart';
-import 'package:gosri/presentations/authentication_screens/welcome_screen.dart';
+import 'package:gosri/routes/app_routes.dart';
 import 'package:gosri/widgets/colors.dart';
-
-import 'presentations/authentication_screens/otp_screen.dart';
-import 'presentations/authentication_screens/set_password_screen.dart';
 
 // Screens
 
@@ -37,15 +31,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/welcome',
-      routes: {
-        '/welcome': (context) => WelcomeScreen(),
-        '/chooseRole': (context) => ChooseRoleScreen(),
-        '/signUp': (context) => SignupScreen(),
-        '/signIn': (context) => SigninScreen(),
-        '/otp': (context) => OtpScreen(),
-        '/setPassword': (context) => SetPasswordScreen(),
-      },
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.routes,
     );
   }
 }

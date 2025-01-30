@@ -4,7 +4,7 @@ import 'package:gosri/widgets/colors.dart';
 import 'package:gosri/widgets/custom_button.dart';
 import 'package:gosri/widgets/input_field.dart';
 import 'package:dropdown_textfield/dropdown_textfield.dart';
-import 'package:roundcheckbox/roundcheckbox.dart';
+import '../../routes/app_routes.dart';
 
 class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
@@ -20,6 +20,8 @@ class _SigninScreenState extends State<SigninScreen> {
   final SingleValueDropDownController genderController =
       SingleValueDropDownController();
   final TextEditingController passwordController = TextEditingController();
+
+  bool _isObscured = true;
 
   void onSignInHandler() {
     print('Sign Up button pressed');
@@ -41,23 +43,21 @@ class _SigninScreenState extends State<SigninScreen> {
             //Back Button
             GestureDetector(
               onTap: () => Navigator.pop(context),
-              child: Container(
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.04,
-                    ),
-                    Icon(
-                      Icons.arrow_back_ios,
-                      size: MediaQuery.of(context).size.height * 0.025,
-                    ),
-                    Text(
-                      'Back',
-                      style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.height * 0.02),
-                    )
-                  ],
-                ),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.04,
+                  ),
+                  Icon(
+                    Icons.arrow_back_ios,
+                    size: MediaQuery.of(context).size.height * 0.025,
+                  ),
+                  Text(
+                    'Back',
+                    style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.height * 0.02),
+                  )
+                ],
               ),
             ),
 
@@ -103,32 +103,43 @@ class _SigninScreenState extends State<SigninScreen> {
                   Container(
                     height: MediaQuery.of(context).size.height * 0.055,
                     width: MediaQuery.of(context).size.width * 0.9,
-                    // decoration: BoxDecoration(color: Colors.blue),
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.surface),
                       borderRadius: BorderRadius.circular(3),
                     ),
-                    child: SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.055,
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: FancyPasswordField(
-                          decoration: InputDecoration(
-                            hintText: 'Enter your password',
-                            hintStyle: TextStyle(
-                              color: AppColors.surface,
-                              fontSize:
-                                  MediaQuery.of(context).size.height * 0.0195,
-                            ),
-                            border: InputBorder.none, // Remove underline
-                            disabledBorder: InputBorder.none,
-                          ),
-                          hasValidationRules: false,
-                          hasStrengthIndicator: false,
-                          controller: passwordController,
+                    child: Container(
+                        height: MediaQuery.of(context).size.height * 0.055,
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(3),
+                          border:
+                              Border.all(color: AppColors.surface, width: 0.1),
                         ),
-                      ),
-                    ),
+                        child: TextFormField(
+                            obscureText: _isObscured,
+                            decoration: InputDecoration(
+                              alignLabelWithHint: true,
+                              hintText: 'Enter your password',
+                              hintStyle: TextStyle(
+                                  fontSize:
+                                      MediaQuery.of(context).size.height * 0.02,
+                                  color: AppColors.surface),
+                              contentPadding: EdgeInsets.all(10),
+                              border: InputBorder.none,
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _isObscured
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                  color: AppColors.surface,
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    _isObscured = !_isObscured;
+                                  });
+                                },
+                              ),
+                            ))),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.02,
@@ -136,6 +147,8 @@ class _SigninScreenState extends State<SigninScreen> {
                   Container(
                       width: MediaQuery.of(context).size.width * 9,
                       child: GestureDetector(
+                        onTap: () => Navigator.pushNamed(
+                            context, AppRoutes.setNewPasswordScreen),
                         child: Text(
                           'Forgot password?',
                           textAlign: TextAlign.end,
@@ -234,7 +247,8 @@ class _SigninScreenState extends State<SigninScreen> {
                   width: MediaQuery.of(context).size.width * 0.02,
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.pushNamed(context, '/signUp'),
+                  onTap: () =>
+                      Navigator.pushNamed(context, AppRoutes.signUpScreen),
                   child: Text(
                     'Sign Up',
                     style: TextStyle(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gosri/presentations/authentication_screens/choose_role_screen.dart';
+import 'package:gosri/routes/app_routes.dart';
 import 'package:gosri/widgets/colors.dart';
 import 'package:gosri/widgets/custom_button.dart';
 
@@ -13,14 +13,12 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen> {
   void signUpHandler() {
     print('signuppressed');
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ChooseRoleScreen()));
+    Navigator.pushNamed(context, AppRoutes.roleScreen);
   }
 
   void logInHandler() {
     print('login pressed');
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ChooseRoleScreen()));
+    Navigator.pushNamed(context, AppRoutes.signInScreen);
   }
 
   @override

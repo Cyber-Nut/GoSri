@@ -3,6 +3,8 @@ import 'package:gosri/widgets/colors.dart';
 import 'package:gosri/widgets/custom_button.dart';
 import 'package:pinput/pinput.dart';
 
+import '../../routes/app_routes.dart';
+
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});
 
@@ -15,7 +17,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
   void onVerifyHandler() {
     print('verify button pressed');
-    Navigator.pushNamed(context, '/setPassword');
+    Navigator.pushNamed(context, AppRoutes.setPasswordScreen);
   }
 
   final defaultPinTheme = PinTheme(
@@ -95,11 +97,9 @@ class _OtpScreenState extends State<OtpScreen> {
               height: MediaQuery.of(context).size.height * 0.1,
             ),
 
-            Container(
-              child: Pinput(
-                length: 4,
-                controller: pinInputController,
-              ),
+            Pinput(
+              length: 4,
+              controller: pinInputController,
             ),
 
             SizedBox(

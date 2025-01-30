@@ -1,6 +1,4 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:gosri/widgets/colors.dart';
 
 class InputField extends StatelessWidget {
@@ -11,13 +9,13 @@ class InputField extends StatelessWidget {
   final int maxLength;
 
   const InputField({
-    Key? key,
+    super.key,
     required this.hintText,
     this.controller,
     this.keyboardType,
     this.obscureText = false,
     this.maxLength = 20,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

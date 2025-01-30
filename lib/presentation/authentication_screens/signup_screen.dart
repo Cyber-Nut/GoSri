@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gosri/routes/app_routes.dart';
 import 'package:gosri/widgets/colors.dart';
 import 'package:gosri/widgets/custom_button.dart';
 import 'package:gosri/widgets/input_field.dart';
@@ -19,9 +20,11 @@ class _SignupScreenState extends State<SignupScreen> {
   final SingleValueDropDownController genderController =
       SingleValueDropDownController();
 
+  bool _isChecked = false;
+
   void onSignUpHandler() {
     print('Sign Up button pressed');
-    Navigator.pushNamed(context, '/otp');
+    Navigator.pushNamed(context, AppRoutes.otpScreen);
   }
 
   @override
@@ -40,23 +43,21 @@ class _SignupScreenState extends State<SignupScreen> {
             //Back Button
             GestureDetector(
               onTap: () => Navigator.pop(context),
-              child: Container(
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.04,
-                    ),
-                    Icon(
-                      Icons.arrow_back_ios,
-                      size: MediaQuery.of(context).size.height * 0.025,
-                    ),
-                    Text(
-                      'Back',
-                      style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.height * 0.02),
-                    )
-                  ],
-                ),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.04,
+                  ),
+                  Icon(
+                    Icons.arrow_back_ios,
+                    size: MediaQuery.of(context).size.height * 0.025,
+                  ),
+                  Text(
+                    'Back',
+                    style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.height * 0.02),
+                  )
+                ],
               ),
             ),
 
@@ -188,7 +189,7 @@ class _SignupScreenState extends State<SignupScreen> {
               children: [
                 RoundCheckBox(
                   onTap: (selected) => print('Check Box Tapped'),
-                  isChecked: false,
+                  isChecked: _isChecked,
                   size: MediaQuery.of(context).size.height * 0.025,
                   checkedColor: AppColors.primary,
                   checkedWidget: Icon(
@@ -201,31 +202,43 @@ class _SignupScreenState extends State<SignupScreen> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.02,
                 ),
-                Text(
-                  'By signing up, you agree to the',
-                  style: TextStyle(
-                      color: AppColors.error,
-                      fontSize: MediaQuery.of(context).size.height * 0.015),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.005,
-                ),
-                Text(
-                  'Terms of Service',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                      fontSize: MediaQuery.of(context).size.height * 0.015),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.005,
-                ),
-                Text(
-                  '&',
-                  style: TextStyle(
-                      color: AppColors.error,
-                      fontSize: MediaQuery.of(context).size.height * 0.015),
-                ),
+                GestureDetector(
+                  onTap: () => setState(() {
+                    _isChecked = !_isChecked;
+                  }),
+                  child: Row(
+                    children: [
+                      Text(
+                        'By signing up, you agree to the',
+                        style: TextStyle(
+                            color: AppColors.error,
+                            fontSize:
+                                MediaQuery.of(context).size.height * 0.015),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.005,
+                      ),
+                      Text(
+                        'Terms of Service',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize:
+                                MediaQuery.of(context).size.height * 0.015),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.005,
+                      ),
+                      Text(
+                        '&',
+                        style: TextStyle(
+                            color: AppColors.error,
+                            fontSize:
+                                MediaQuery.of(context).size.height * 0.015),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
 
@@ -315,7 +328,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   width: MediaQuery.of(context).size.width * 0.02,
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.pushNamed(context, '/signIn'),
+                  onTap: () =>
+                      Navigator.pushNamed(context, AppRoutes.signInScreen),
                   child: Text(
                     'Sign In',
                     style: TextStyle(
