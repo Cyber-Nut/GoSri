@@ -89,7 +89,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           height: MediaQuery.of(context).size.height * 0.06,
                           child: CustomButton(
                             title: 'Log in',
-                            onPressed: signUpHandler,
+                            onPressed: logInHandler,
                             borderColor: AppColors.primary,
                             backgroundColor: Colors.white,
                           ),

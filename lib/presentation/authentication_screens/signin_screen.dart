@@ -24,6 +24,7 @@ class _SigninScreenState extends State<SigninScreen> {
 
   void onSignInHandler() {
     print('Sign Up button pressed');
+    Navigator.pushNamed(context, AppRoutes.homeScreen);
   }
 
   @override

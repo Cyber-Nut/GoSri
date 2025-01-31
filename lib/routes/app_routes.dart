@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gosri/presentation/authentication_screens/choose_role_screen.dart';
 import 'package:gosri/presentation/authentication_screens/set_newpassword_screen.dart';
+import 'package:gosri/presentation/content_screens/home_screen.dart';
 import 'package:gosri/presentation/intro_screens/at_any_moment_screen.dart';
 import 'package:gosri/presentation/intro_screens/book_your_ride_screen.dart';
 import 'package:gosri/presentation/intro_screens/by_your_side_screen.dart';
@@ -32,6 +33,8 @@ class AppRoutes {
       'lib/presentation/intro_screens/at_any_moment_screen.dart';
   static const String bookYourRideScreen =
       'lib/presentation/intro_screens/book_your_ride_screen.dart';
+  static const String homeScreen =
+      'lib/presentation/content_screens/home_screen.dart';
   static const String initialRoute =
       'lib/presentation/intro_screens/by_your_side_screen.dart';
 
@@ -46,6 +49,7 @@ class AppRoutes {
     byYourSideScreen: (context) => ByYourSideScreen(),
     atAnyMomentScreen: (context) => AtAnyMomentScreen(),
     bookYourRideScreen: (context) => BookYourRideScreen(),
+    homeScreen: (context) => HomeScreen(),
     initialRoute: (context) => ByYourSideScreen(),
   };
 }

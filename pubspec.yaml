@@ -68,12 +68,14 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
       - assets/images/googleLogo.png
-      - assets/images/metaLogo.png
       - assets/images/welcome.svg
       - assets/images/facebookIcon.png
       - assets/images/intro1.svg
       - assets/images/intro2.svg
       - assets/images/intro3.svg
+      - assets/images/car.png
+      - assets/images/lease.png
+      - assets/images/bike.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
