@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gosri/presentation/content_screens/navigation_menu.dart';
 import 'package:gosri/widgets/colors.dart';
 import 'package:gosri/widgets/custom_button.dart';
 import 'package:gosri/widgets/input_field.dart';
@@ -23,8 +24,8 @@ class _SigninScreenState extends State<SigninScreen> {
   bool _isObscured = true;
 
   void onSignInHandler() {
-    print('Sign Up button pressed');
-    Navigator.pushNamed(context, AppRoutes.homeScreen);
+    print('Sign in button pressed');
+    Navigator.pushNamed(context, AppRoutes.navigationMenu);
   }
 
   @override

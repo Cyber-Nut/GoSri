@@ -19,8 +19,7 @@ class InputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: TextField(
+    return TextField(
       controller: controller,
       keyboardType: keyboardType,
       obscureText: obscureText,
@@ -47,6 +46,6 @@ class InputField extends StatelessWidget {
               borderSide: BorderSide(
                 color: AppColors.surface,
               ))),
-    ));
+    );
   }
 }

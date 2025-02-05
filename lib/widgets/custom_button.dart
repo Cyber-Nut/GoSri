@@ -18,8 +18,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: onPressed,
-        child: Expanded(
-            child: Container(
+        child: Container(
           decoration: BoxDecoration(
               color: backgroundColor,
               borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -34,6 +33,6 @@ class CustomButton extends StatelessWidget {
                   fontSize: MediaQuery.of(context).size.height * 0.021),
             ),
           ),
-        )));
+        ));
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gosri/widgets/colors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,6 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         actions: [
@@ -125,7 +125,8 @@ class _HomeScreenState extends State<HomeScreen> {
               title: Text(
                 'Complaint',
                 style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.017),
+                  fontSize: MediaQuery.of(context).size.height * 0.017,
+                ),
               ),
               onTap: () {
                 // Handle item 1 tap

@@ -39,6 +39,7 @@ dependencies:
   fancy_password_field: ^2.0.8
   pinput: ^5.0.1
   flutter_svg: ^2.0.9
+  get: ^4.6.6
 
 dev_dependencies:
   flutter_test:

@@ -135,13 +135,11 @@ class _OtpScreenState extends State<OtpScreen> {
             SizedBox(
                 height: MediaQuery.of(context).size.height * 0.06,
                 width: MediaQuery.of(context).size.width * 0.85,
-                child: Expanded(
-                  child: CustomButton(
-                      title: "Verify",
-                      onPressed: onVerifyHandler,
-                      backgroundColor: AppColors.primary,
-                      borderColor: AppColors.primary),
-                )),
+                child: CustomButton(
+                    title: "Verify",
+                    onPressed: onVerifyHandler,
+                    backgroundColor: AppColors.primary,
+                    borderColor: AppColors.primary)),
           ],
         ),
       ),

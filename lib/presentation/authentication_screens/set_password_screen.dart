@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gosri/routes/app_routes.dart';
 import 'package:gosri/widgets/colors.dart';
 import 'package:gosri/widgets/custom_button.dart';
 
@@ -18,7 +19,8 @@ class __SetPasswordScreenState extends State<SetPasswordScreen> {
   bool _isObscured2 = true;
 
   void onRegisterHandler() {
-    print('verify button pressed');
+    print('Register button pressed');
+    Navigator.pushNamed(context, AppRoutes.navigationMenu);
   }
 
   @override
@@ -186,13 +188,11 @@ class __SetPasswordScreenState extends State<SetPasswordScreen> {
             SizedBox(
                 height: MediaQuery.of(context).size.height * 0.06,
                 width: MediaQuery.of(context).size.width * 0.85,
-                child: Expanded(
-                  child: CustomButton(
-                      title: "Register",
-                      onPressed: onRegisterHandler,
-                      backgroundColor: AppColors.primary,
-                      borderColor: AppColors.primary),
-                )),
+                child: CustomButton(
+                    title: "Register",
+                    onPressed: onRegisterHandler,
+                    backgroundColor: AppColors.primary,
+                    borderColor: AppColors.primary)),
           ],
         ),
       ),
