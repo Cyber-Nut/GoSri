@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gosri/presentation/content_screens/history/ride_history_screen.dart';
 import 'package:gosri/presentation/content_screens/home_screen.dart';
 
 class NavigationMenu extends StatelessWidget {
@@ -49,9 +50,7 @@ class NavigationController extends GetxController {
     Container(
       color: Colors.red,
     ),
-    Container(
-      color: Colors.amber,
-    ),
+    RideHistoryScreen(),
     Container(
       color: Colors.pink,
     )
