@@ -174,13 +174,11 @@ class _SignupScreenState extends State<SignupScreen> {
             Container(
                 height: MediaQuery.of(context).size.height * 0.06,
                 width: MediaQuery.of(context).size.width * 0.85,
-                child: Expanded(
-                  child: CustomButton(
-                      title: "Sign Up",
-                      onPressed: onSignUpHandler,
-                      backgroundColor: AppColors.primary,
-                      borderColor: AppColors.primary),
-                )),
+                child: CustomButton(
+                    title: "Sign Up",
+                    onPressed: onSignUpHandler,
+                    backgroundColor: AppColors.primary,
+                    borderColor: AppColors.primary)),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),

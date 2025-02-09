@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:gosri/widgets/history_card.dart';
+import 'package:gosri/routes/app_routes.dart';
 import 'package:gosri/widgets/colors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -24,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: AppColors.background,
             ),
             onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.notificationScreen);
               // Handle notification icon press
             },
           ),
@@ -199,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: Expanded(
+      body: SingleChildScrollView(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -328,7 +332,7 @@ class _HomeScreenState extends State<HomeScreen> {
             height: MediaQuery.of(context).size.height * 0.02,
           ),
           Container(
-            height: MediaQuery.of(context).size.height * 0.18,
+            height: MediaQuery.of(context).size.height * 0.12,
             width: MediaQuery.of(context).size.width * 0.88,
             decoration: BoxDecoration(color: AppColors.surface),
             child: Center(
@@ -360,7 +364,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               )
             ],
-          )
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.06,
+            width: MediaQuery.of(context).size.width * 0.9,
+            decoration: BoxDecoration(
+                color: Color.fromARGB(255, 248, 223, 245),
+                borderRadius: BorderRadius.circular(10)),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15, right: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [Text('10 May, 2025'), Text('N250')],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.01,
+          ),
+          HistoryCard()
         ],
       )),
     ));

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:gosri/presentation/content_screens/history/history_card.dart';
 import 'package:gosri/widgets/colors.dart';
+import 'package:gosri/widgets/notification_card.dart';
 
-class RideHistoryScreen extends StatefulWidget {
-  const RideHistoryScreen({super.key});
+import '../../../../widgets/history_card.dart';
+
+class NotificationScreen extends StatefulWidget {
+  const NotificationScreen({super.key});
 
   @override
-  State<RideHistoryScreen> createState() => _RideHistoryScreenState();
+  State<NotificationScreen> createState() => _NotificationScreenState();
 }
 
-class _RideHistoryScreenState extends State<RideHistoryScreen> {
+class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -51,25 +53,14 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
             ),
 
             Align(
-              alignment: Alignment(-1, 0),
+              alignment: Alignment(0, 0),
               child: Text(
-                'Ride History',
+                'Notification',
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     fontSize: MediaQuery.of(context).size.height * 0.03,
                     fontWeight: FontWeight.w400,
                     color: AppColors.error),
-              ),
-            ),
-            Align(
-              alignment: Alignment(-1, 0),
-              child: Text(
-                'Showing all your ride history',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.018,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.surface),
               ),
             ),
 
@@ -80,11 +71,11 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
             Align(
               alignment: Alignment(-1, 0),
               child: Text(
-                'Active Ride',
+                'Today',
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     fontSize: MediaQuery.of(context).size.height * 0.022,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w500,
                     color: AppColors.error),
               ),
             ),
@@ -93,7 +84,14 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
             ),
             Align(
               alignment: Alignment(-1, 0),
-              child: HistoryCard(),
+              child: NotificationCard(),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.01,
+            ),
+            Align(
+              alignment: Alignment(-1, 0),
+              child: NotificationCard(),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
@@ -102,11 +100,11 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
             Align(
               alignment: Alignment(-1, 0),
               child: Text(
-                'Past Ride',
+                'Yesterday',
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     fontSize: MediaQuery.of(context).size.height * 0.022,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w500,
                     color: AppColors.error),
               ),
             ),

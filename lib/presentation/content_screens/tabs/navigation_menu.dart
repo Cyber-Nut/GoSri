@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:gosri/presentation/content_screens/history/ride_history_screen.dart';
-import 'package:gosri/presentation/content_screens/home_screen.dart';
+import 'package:gosri/presentation/content_screens/tabs/history/ride_history_screen.dart';
+import 'package:gosri/presentation/content_screens/tabs/home/home_screen.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
